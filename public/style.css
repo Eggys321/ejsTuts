@@ -1,0 +1,30 @@
+.container{
+    width: 90%;
+    margin: auto;
+   }
+   nav{
+    display: flex;
+    justify-content: space-between;
+   }
+   a{
+    text-decoration: none;
+   }
+   li{
+    list-style: none;
+   }
+   ul{
+    display: flex;
+    gap: 2rem;
+   }
+   /* form style */
+   form{
+    width: 60%;
+    margin: auto;
+   }
+   form button{
+    background-color: blue;
+    color: white;
+    width:30% ;
+    height: 30px;
+    font-size: 1rem;
+   }
