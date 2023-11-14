@@ -1,35 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/header.ejs') %>
-<body>
-
-
+  <%- include('../partials/header.ejs') %>
+  <body>
     <%- include('../partials/nav.ejs') %>
 
-
     <main class="container">
-        <h1>Welcome to my Home Page</h1>
-        <section>
-            <% if(tasks.length){ %>
-                <% tasks.map((task)=>{ %>
-                    <h2> <%= task.name %>  </h2>
-                    <p><%= task.task  %>  </p>
+      <h1>Welcome to my Home Page</h1>
+      <section>
+        <% if(tasks.length){ %> <% tasks.map((task)=>{ %>
+        <a href="/api/v1/route/<%- task._id %>">
+          <h2><%= task.name %></h2>
+          <p><%= task.task %></p>
+          <!-- <p><%- task._id  %>  </p> -->
+        </a>
 
-
-                <% }) %>
-
-            <% }else{ %>
-                <h1>No Tasks To Display yet</h1>
-            <% } %>
-
-
-
-        </section>
-        <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id architecto aperiam ullam repellat, tempore nisi tempora saepe quae asperiores, eligendi eos perferendis odio delectus ratione cum autem error laboriosam! Illo sint veniam repellendus earum ratione quibusdam perferendis odio voluptate eveniet dolores animi iusto nobis dolorum minus eum esse praesentium, sed voluptatibus sequi. Unde facilis deleniti et provident nesciunt optio numquam tempore odio distinctio minima, ab expedita blanditiis omnis ex eos ullam possimus debitis vero cum. Porro explicabo placeat quis provident quas exercitationem distinctio a aliquam illo nihil error libero laudantium natus numquam quidem aspernatur perferendis magnam hic, id soluta?</p> -->
+        <% }) %> <% }else{ %>
+        <h1>No Tasks To Display yet</h1>
+        <% } %>
+      </section>
+      <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id architecto aperiam ullam repellat, tempore nisi tempora saepe quae asperiores, eligendi eos perferendis odio delectus ratione cum autem error laboriosam! Illo sint veniam repellendus earum ratione quibusdam perferendis odio voluptate eveniet dolores animi iusto nobis dolorum minus eum esse praesentium, sed voluptatibus sequi. Unde facilis deleniti et provident nesciunt optio numquam tempore odio distinctio minima, ab expedita blanditiis omnis ex eos ullam possimus debitis vero cum. Porro explicabo placeat quis provident quas exercitationem distinctio a aliquam illo nihil error libero laudantium natus numquam quidem aspernatur perferendis magnam hic, id soluta?</p> -->
     </main>
 
-    <%- include('../partials/footer.ejs')  %>
-
-    
-</body>
+    <%- include('../partials/footer.ejs') %>
+  </body>
 </html>
