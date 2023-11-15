@@ -9,8 +9,8 @@
       <section>
         <% if(tasks.length){ %> <% tasks.map((task)=>{ %>
         <a href="/api/v1/route/<%- task._id %>">
-          <h2><%= task.name %></h2>
-          <p><%= task.task %></p>
+          <h2> Name: <%= task.name %></h2>
+          <p>Title:  <%= task.title  %></p>
           <!-- <p><%- task._id  %>  </p> -->
         </a>
 
