@@ -5,11 +5,14 @@ const morgan = require("morgan");
 const TASKS = require("./model/taskModel");
 // const mongoose = require("mongoose");
 const connect = require("./db/mongoDB");
+const taskRouter = require('./router/taskRouter')
 require("dotenv/config");
 
 // custom middlewares
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
+app.use(morgan("dev"));
+app.use(express.static("public"));
 // app.use((req,res,next)=>{
 //     console.log('new request made');
 //     console.log('host: ', req.hostname);
@@ -57,8 +60,7 @@ app.get("/single-task", async (req, res) => {
 
 // END OF DATABASE TEST
 
-app.use(morgan("dev"));
-app.use(express.static("public"));
+
 
 // routes
 // app.get('/',(req,res)=>{
@@ -79,31 +81,8 @@ app.use(express.static("public"));
 // ];
 
 // api
-// post route
-app.post("/api/v1/create", async (req, res) => {
-  // console.log(req.body);
-  const newTask = new TASKS(req.body);
-  try {
-    await newTask.save();
-    res.status(201).redirect("/");
-  } catch (error) {
-    console.log(error);
-  }
-});
-// route params 
-app.get('/api/v1/route/:id',async(req,res)=>{
-  const id = req.params.id
-  console.log(id);
-  try{
-    const result = await TASKS.findById(id)
-    res.status(200).render('singlepage' , {title:'single ||page',task:result})
+app.use('/api/v1',taskRouter)
 
-  }catch(error){
-    console.log(error);
-  }
-
-
-})
 // page routes
 app.get("/", async (req, res) => {
   // TASKS.find()
