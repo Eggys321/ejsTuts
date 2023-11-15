@@ -25,20 +25,20 @@ const delete_task = async (req, res) => {
 // params route for getting single page
 
 const single_page = async (req, res) => {
-    const id = req.params.id;
-    console.log(id);
-    try {
-      const result = await TASKS.findById(id);
-      res
-        .status(200)
-        .render("singlepage", { title: "single ||page", task: result });
-    } catch (error) {
-      console.log(error);
-    }
+  const id = req.params.id;
+  console.log(id);
+  try {
+    const result = await TASKS.findById(id);
+    res
+      .status(200)
+      .render("singlepage", { title: "single || page", task: result });
+  } catch (error) {
+    console.log(error);
   }
+};
 
 module.exports = {
   create_task,
   delete_task,
-  single_page
+  single_page,
 };
