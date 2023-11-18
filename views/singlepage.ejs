@@ -8,15 +8,19 @@
     <main class="container">
 
         <div>
-          <h1> Name: <%- task.name %></h1>
-          <h2> Title: <%- task.title  %> </h2>
-          <p>Task: <%- task.task  %> </p>
+          <h1> Name: <%= task.name %></h1>
+          <h2> Title: <%= task.title  %> </h2>
+          <p>Task: <%= task.task  %> </p>
           <div>
             <button>
               
               <a href="/api/v1/delete/<%- task._id %>">delete task</a>
             </button>
-            <button>edit task</button>
+            <button>
+              <a href="/api/v1/editpage/<%- task._id %>">
+                edit task
+              </a>
+            </button>
           </div>
         </div>
     </main>

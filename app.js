@@ -106,9 +106,23 @@ app.get("/tasks", (req, res) => {
   res.render("tasks", { title: "New Task || Page" });
 });
 
+app.get('/api/v1/editpage/:id',async (req,res)=>{
+  const id = req.params.id
+  try{
+    const result =await TASKS.findById(id)
+    res.render('editpage',{title:'edit || page',task:result})
+
+  }catch(error){
+    console.log(error);
+  }
+
+})
+
 app.use((req, res) => {
   res.render("404", { title: "Error || Page" });
 });
+
+
 
 // db Connection
 connect()

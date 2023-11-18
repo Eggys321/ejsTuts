@@ -37,8 +37,30 @@ const single_page = async (req, res) => {
   }
 };
 
+// edit route 
+
+const edit_task = async(req,res)=>{
+  const id = req.params.id;
+  const updatedData = req.body;
+  try{
+    await TASKS.findByIdAndUpdate(id, updatedData,{new:true})
+    res.status(301).redirect('/')
+
+  }catch(error){
+    console.log(error);
+  }
+  // Trainees.findByIdAndUpdate(id, updatedData, { new: true })
+  //   .then((result) => {
+  //     res.redirect("/todos");
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
+}
+
 module.exports = {
   create_task,
   delete_task,
   single_page,
+  edit_task
 };
