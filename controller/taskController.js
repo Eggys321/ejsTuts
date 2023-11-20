@@ -58,9 +58,23 @@ const edit_task = async(req,res)=>{
   //   });
 }
 
+const edit_page = async (req,res)=>{
+  const id = req.params.id
+  try{
+    const result =await TASKS.findById(id)
+    res.render('editpage',{title:'edit || page',task:result})
+
+  }catch(error){
+    console.log(error);
+  }
+
+}
+
+
 module.exports = {
   create_task,
   delete_task,
   single_page,
-  edit_task
+  edit_task,
+  edit_page
 };
