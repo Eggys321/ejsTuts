@@ -14,7 +14,7 @@ router.get("/delete/:id", delete_task );
 // update route U -- update
 router.post('/edit/:id',edit_task)
 
-// single page route
+// edit page route
 
 router.get('/editpage/:id', edit_page)
 

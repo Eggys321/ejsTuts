@@ -6,7 +6,7 @@
     <%- include('../partials/nav.ejs') %>
 
     <main class="container">
-      <form action="/api/v1/edit/<%- task._id  %>" method="post">
+      <form action="/api/v1/edit/<%= task._id  %>" method="post">
         <label for="name">Name:</label>
         <input
           type="text"
@@ -27,7 +27,7 @@
         </textarea> -->
         <input type="text" id="name" name="task" value="<%= task.task %>">
         <br /><br />
-        <button type="submit">edit</button>
+        <button type="submit">update task</button>
       </form>
     </main>
 

@@ -37,7 +37,7 @@ const single_page = async (req, res) => {
   }
 };
 
-// edit route 
+// update route 
 
 const edit_task = async(req,res)=>{
   const id = req.params.id;
@@ -49,15 +49,8 @@ const edit_task = async(req,res)=>{
   }catch(error){
     console.log(error);
   }
-  // Trainees.findByIdAndUpdate(id, updatedData, { new: true })
-  //   .then((result) => {
-  //     res.redirect("/todos");
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
 }
-
+// edit page
 const edit_page = async (req,res)=>{
   const id = req.params.id
   try{
