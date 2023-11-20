@@ -32,6 +32,8 @@ form button {
 
 footer{
     text-align: center;
-    /* border-top: 1px solid red; */
+    position: fixed;
+    bottom: 10vh;
+    border-top: 1px solid red;
     
 }
