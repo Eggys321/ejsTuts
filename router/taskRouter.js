@@ -16,6 +16,6 @@ router.post('/edit/:id',edit_task)
 
 // edit page route
 
-router.get('/editpage/:id', edit_page)
+router.get('/editpage/:id', edit_page) 
 
 module.exports = router;
